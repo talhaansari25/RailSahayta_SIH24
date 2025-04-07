@@ -1,0 +1,57 @@
+{
+    "seat": {
+        "subcategory": ["broken seat", "scratched seat", "dirty seat", "bedroll"],
+        "department": "Mechanical",
+        "role": "Sr. Divisional Mechanical Engineer (Carriage & Wagon)"
+    },
+    "window": {
+        "subcategory": ["cracked window", "dirty window", "broken window"],
+        "department": "Mechanical",
+        "role": "Sr. Divisional Mechanical Engineer (Carriage & Wagon)"
+    },
+    "food": {
+        "subcategory": ["spoilt/expired food", "food taste", "food quantity"],
+        "department": "Catering",
+        "role": "Sr. Divisional Catering Manager"
+    },
+    "compartment": {
+        "subcategory": ["garbage on coach"],
+        "department": "Hygiene",
+        "role": "Chief Hygiene Superintendent"
+    },
+    "toilet": {
+        "subcategory": ["unhygenic toilet", "unhygenic washbasin", "flush problem", "no water"],
+        "department": "Hygiene",
+        "role": "Chief Hygiene Superintendent"
+    },
+    "violence": {
+        "subcategory": ["staff violence/behaviour", "passenger violence", "bribery", "seat hijacking", "smoking/alcohol"],
+        "department": "Security",
+        "role": "Sr. Divisional Security Commissioner"
+    },
+    "management": {
+        "subcategory": ["train delay", "app issue", "missing items"],
+        "department": "Management",
+        "role": "Divisional Railway Manager"
+    },
+    "ticketing issue": {
+        "subcategory": ["wrong ticket", "money issue"],
+        "department": "Commercial",
+        "role": "Sr. Divisional Commercial Manager"
+    },
+    "security": {
+        "subcategory": ["robbery", "misbehaviour with lady passenger", "unauthorized person in ladies coach", "absence of security personnel"],
+        "department": "Security",
+        "role": "Sr. Divisional Security Commissioner"
+    },
+    "electricity": {
+        "subcategory": ["AC (Air Conditioner)", "Light", "Fan", "Charging Port"],
+        "department": "Electrical",
+        "role": "Sr. Divisional Electrical Engineer (General)"
+    },
+    "medical": {
+        "subcategory": ["First Aid Kit Requirement", "Medical Assistance"],
+        "department": "Medical",
+        "role": "Sr. Divisional Medical Engineer (General)"
+    }
+}

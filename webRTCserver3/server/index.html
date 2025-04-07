@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WebRTC Video Call</title>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    video {
+      width: 100%;
+      max-width: 100%;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border-radius: 5px;
+      padding: 0;
+      box-shadow: rgba(156, 172, 172, 0.2) 0px 2px 2px, rgba(156, 172, 172, 0.2) 0px 4px 4px, rgba(156, 172, 172, 0.2) 0px 8px 8px, rgba(156, 172, 172, 0.2) 0px 16px 16px;
+    }
+
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .copy {
+      position: fixed;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+    }
+
+    @media (orientation: landscape) {
+      video {
+        width: 45%;
+      }
+
+      body {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="video-container" id="videoContainer">
+    <video id="localVideo" autoplay muted playsinline></video>
+  </div>
+
+  <script>
+    // // Generate random room name if needed
+    if (!location.hash) {
+      location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    }
+    const roomHash = location.hash.substring(1);
+
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const roomHash = urlParams.get('id');
+
+    // TODO: Replace with your own channel ID
+    const drone = new ScaleDrone('yiS12Ts5RdNhebyM');
+    const roomName = 'observable-' + roomHash;
+    const configuration = {
+      iceServers: [{
+        urls: 'stun:stun.l.google.com:19302'
+      }]
+    };
+    let room;
+    let pc;
+    let userStreams = {};
+
+    function onSuccess() { };
+    function onError(error) {
+      console.error(error);
+    };
+
+    drone.on('open', error => {
+      if (error) {
+        return console.error(error);
+      }
+      room = drone.subscribe(roomName);
+      room.on('open', error => {
+        if (error) {
+          onError(error);
+        }
+      });
+
+      room.on('members', members => {
+        console.log('MEMBERS', members);
+        // const isOfferer = true;
+        const isOfferer = members.length === 2;
+        startWebRTC(isOfferer);
+      });
+    });
+
+    // Send signaling data via Scaledrone
+    function sendMessage(message) {
+      drone.publish({
+        room: roomName,
+        message
+      });
+    }
+
+    function startWebRTC(isOfferer) {
+      pc = new RTCPeerConnection(configuration);
+
+      pc.onicecandidate = event => {
+        if (event.candidate) {
+          sendMessage({ 'candidate': event.candidate });
+        }
+      };
+
+      if (isOfferer) {
+        pc.onnegotiationneeded = () => {
+          pc.createOffer().then(localDescCreated).catch(onError);
+        };
+      }
+
+      pc.ontrack = event => {
+        const stream = event.streams[0];
+        if (!userStreams[stream.id]) {
+          userStreams[stream.id] = stream;
+          addRemoteVideo(stream);
+        }
+      };
+
+      navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: {
+          facingMode: 'environment', // Use front camera on mobile
+          width: { ideal: 1280 },
+          height: { ideal: 720 }
+        }
+      }).then(stream => {
+        console.log('Access granted to camera and microphone');
+        localVideo.srcObject = stream;
+        stream.getTracks().forEach(track => pc.addTrack(track, stream));
+      }).catch(err => {
+        console.error('Error accessing media devices: ', err);
+        alert('Please enable camera and microphone permissions');
+      });
+
+      room.on('data', (message, client) => {
+        if (client.id === drone.clientId) {
+          return;
+        }
+
+        if (message.sdp) {
+          pc.setRemoteDescription(new RTCSessionDescription(message.sdp), () => {
+            if (pc.remoteDescription.type === 'offer') {
+              pc.createAnswer().then(localDescCreated).catch(onError);
+            }
+          }, onError);
+        } else if (message.candidate) {
+          pc.addIceCandidate(
+            new RTCIceCandidate(message.candidate), onSuccess, onError
+          );
+        }
+      });
+    }
+
+    function addRemoteVideo(stream) {
+      const videoElement = document.createElement('video');
+      videoElement.autoplay = true;
+      videoElement.playsinline = true;
+      videoElement.srcObject = stream;
+      document.getElementById('videoContainer').appendChild(videoElement);
+    }
+
+    function localDescCreated(desc) {
+      pc.setLocalDescription(
+        desc,
+        () => sendMessage({ 'sdp': pc.localDescription }),
+        onError
+      )
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+    "raise complaint": {
+      "answer": "You can file a complaint by visiting the railway website and filling out the complaint form.",
+      "link": "http://www.railway-complaint-form.com"
+    },
+    "train delay": {
+      "answer": "For train delay information, please visit the official railway tracking system.",
+      "link": "http://www.railway-tracking-system.com"
+    }
+  }
+  

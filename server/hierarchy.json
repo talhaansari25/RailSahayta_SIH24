@@ -1,0 +1,135 @@
+{
+    "IndianRailways": {
+      "Zones": [
+        {
+          "Name": "Northern Railway",
+          "Divisions": [
+            "Delhi",
+            "Ambala",
+            "Ludhiana",
+            "Jammu",
+            "Varanasi",
+            "Moradabad",
+            "Lucknow"
+          ]
+        },
+        {
+          "Name": "Western Railway",
+          "Divisions": [
+            "Mumbai",
+            "Vadodara",
+            "Rajkot",
+            "Ahmedabad",
+            "Bhavnagar",
+            "Surat"
+          ]
+        },
+        {
+          "Name": "Southern Railway",
+          "Divisions": [
+            "Chennai",
+            "Madurai",
+            "Trivandrum",
+            "Palakkad",
+            "Salem",
+            "Tiruchirappalli"
+          ]
+        },
+        {
+          "Name": "Eastern Railway",
+          "Divisions": [
+            "Kolkata",
+            "Howrah",
+            "Sealdah",
+            "Asansol",
+            "Malda"
+          ]
+        },
+        {
+          "Name": "South Central Railway",
+          "Divisions": [
+            "Secunderabad",
+            "Hyderabad",
+            "Vijayawada",
+            "Guntur",
+            "Nanded",
+            "Nizamabad"
+          ]
+        },
+        {
+          "Name": "South Eastern Railway",
+          "Divisions": [
+            "Kharagpur",
+            "Adra",
+            "Ranchi",
+            "Bhubaneswar",
+            "Bilaspur"
+          ]
+        },
+        {
+          "Name": "Eastern Central Railway",
+          "Divisions": [
+            "Jhansi",
+            "Kanpur",
+            "Prayagraj",
+            "Varanasi"
+          ]
+        },
+        {
+          "Name": "North Eastern Railway",
+          "Divisions": [
+            "Gorakhpur",
+            "Varanasi",
+            "Izzatnagar",
+            "Lucknow"
+          ]
+        },
+        {
+          "Name": "North Western Railway",
+          "Divisions": [
+            "Jaipur",
+            "Jodhpur",
+            "Bikaner",
+            "Ajmer"
+          ]
+        },
+        {
+          "Name": "Central Railway",
+          "Divisions": [
+            "Mumbai",
+            "Pune",
+            "Nagpur",
+            "Bhusawal",
+            "Solapur"
+          ]
+        },
+        {
+          "Name": "South Western Railway",
+          "Divisions": [
+            "Hubli",
+            "Mysuru",
+            "Bengaluru",
+            "Ballari"
+          ]
+        },
+        {
+          "Name": "West Central Railway",
+          "Divisions": [
+            "Jabalpur",
+            "Bhopal",
+            "Kota"
+          ]
+        },
+        {
+          "Name": "North Frontier Railway",
+          "Divisions": [
+            "Guwahati",
+            "Rangiya",
+            "Katihar",
+            "Lumding"
+          ]
+        }
+      ]
+    }
+  }
+  

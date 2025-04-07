@@ -1,0 +1,245 @@
+@media only screen and (max-width: 868px) {
+  .logoS1,
+  .logoS2,
+  .logoS3 {
+    display: none;
+  }
+
+  body{
+    overflow-x: hidden !important;
+  }
+
+  .railTB p {
+    display: none;
+  }
+
+  .emergC p {
+    display: none;
+  }
+
+  .emergC {
+    background-color: white !important;
+  }
+
+  .emergC img {
+    width: 100%;
+  }
+
+  .emergC {
+    /* width: fit-content !important; */
+    width: 10%;
+  }
+
+  .railTB img {
+    width: 100% !important;
+  }
+
+  .railTB {
+    width: 32%;
+    margin-right: -3% !important;
+    margin-top: 1%;
+  }
+
+  .topBar {
+    height: 7vh !important;
+  }
+
+  .flexEle {
+    height: 8vh !important;
+    display: flex;
+    justify-content: center !important;
+    align-items: center;
+    gap: 5%;
+  }
+
+  .authOptions button {
+    white-space: nowrap;
+    border-radius: 4px !important;
+  }
+
+  .signBtn {
+    /* margin-right: 160% !important; */
+    background-color: white !important;
+    font-size: 16px !important;
+    color: var(--material);
+  }
+
+  .broSi {
+    font-size: 14px !important;
+    width: fit-content !important;
+  }
+
+  .broSl {
+    font-size: 14px !important;
+    margin-left: 44% !important;
+  }
+
+  .broSi {
+    background-color: #ffe0eb !important;
+    /* width:45% !important;  */
+    margin-right: 25%;
+  }
+
+  .authOptions {
+    width: 30% !important;
+  }
+
+  #selLang {
+    width: 19% !important;
+    font-size: 13px !important;
+    height: 4vh !important;
+    margin-left: 5%;
+  }
+
+  .popup-content {
+    width: 290px !important;
+  }
+
+  .redirectIcons {
+    display: none;
+  }
+
+  .compOptions {
+    display: block;
+    position: static !important;
+    width: 100% !important;
+    display: flex;
+    height: 14vh !important;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+    margin-top: 0% !important;
+  }
+
+  .signBtn {
+    font-size: 20px !important;
+  }
+
+  #logoutU {
+    font-size: 20px !important;
+    margin-left: 7%;
+  }
+
+  .flexC {
+    flex-direction: column;
+    margin-top: 0% !important;
+  }
+
+  .bro1 {
+    margin-bottom: 3%;
+  }
+
+  .flexEle{
+    margin-bottom: 0% !important;
+
+  }
+
+
+  .topBar{
+    height: 8vh !important;
+  }
+  .trainC {
+    padding-top: 5% !important;
+    padding-bottom: 5% !important;
+  } 
+
+  .signBtn{
+    font-size: 15px !important;
+  }
+  .compBox{
+    width: 71% !important;
+    min-width: 48vh !important;
+    margin-left: 0% !important;
+    /* margin-top: 0% !important; */
+  }
+
+ .bichwala{
+    width: 10% !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px !important;  
+    margin-right: 5%;
+    
+ }
+
+ .bichwala button{
+   padding: 0% !important;
+  width: 300% !important;
+  padding: 45% 0% !important;
+ }
+
+ .pagination{
+    margin-top: 4% !important;
+ }
+
+ .broo5{
+    height: 68vh !important;
+ }
+
+ .popup-content{
+    /* width: 400px !important; */
+    margin-right:0%;
+ }
+
+ /* .popup-overlay{
+    width: 90% !important;
+ } */
+
+ .flexStaffD{
+    flex-direction: column;
+ }
+
+ .bhhhh{
+    background-color: #ffe0eb !important;
+ }
+
+ #nj{
+    font-size: 14px !important;
+ }
+
+ .staffComp{
+    width: 98% !important;
+    height: 65vh !important;
+ }
+
+ .staffCompH{
+    flex-direction: column !important;
+    justify-content: start !important;
+    align-items: start !important ;
+ }
+
+ .staffCompH p{
+    margin-top: 0.9%;
+    width: 90% !important;
+ }
+
+ .staffCompH p:first-child{
+    font-weight: 700;
+ }
+
+ .staffCompH button{
+    margin-top: 3%;
+    border-radius: 5px !important;
+    padding: 2% 5% !important;
+    margin-bottom: 2%;
+ }
+
+ .staffTrain{
+    width: 98% !important;
+    margin-top: 1%;
+    height: 25vh !important;
+ }
+
+ .showComplaints{
+    height: 55vh !important;
+    overflow-y: scroll;
+ }
+
+ .active{
+  border-width: 0px 0px 5px 0px !important;
+  border-color: rgb(26, 132, 80) !important;
+ } 
+
+}
+
+
+
