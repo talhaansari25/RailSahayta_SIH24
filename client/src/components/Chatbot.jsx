@@ -6,7 +6,7 @@ export default function Chatbot({ setbot_view, bot_view, messages, setMessages, 
     const chatScreenRef = useRef(null); // Reference to the chat_screen div
     const fileInputRef = useRef(null); // Reference to the hidden file input
 
-    // Scroll to the bottom whenever messages change
+    // Scroll to bottom whenever messages change
 
 
     useEffect(() => {
