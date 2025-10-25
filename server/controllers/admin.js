@@ -8,7 +8,7 @@ export const loginAdmin = async (req, res) =>{
   try {
     const { email, password } = req.body;
 
-    // Check if email exists in the database
+    // Check if email exists in  database
     const admin = await Admin.findOne({ email: email });
 
     if (!admin) {
