@@ -8,7 +8,7 @@ export const loginAdmin = async (req, res) =>{
   try {
     const { email, password } = req.body;
 
-    // Check if email exists in  database
+    // Check if email exists  database
     const admin = await Admin.findOne({ email: email });
 
     if (!admin) {
@@ -108,15 +108,15 @@ export const getCompByDept = async (req, res) => {
 
 export const getStaffByDept = async (req, res) => {
   try {
-    const { dept } = req.body; // Assuming dept is passed in the body
+    const { dept } = req.body; 
 
     let staffInDept;
     
     if (dept === "Railway") {
-      // Fetch all staff records if dept is "Railway"
+      
       staffInDept = await Staff.find({});
     } else {
-      // Fetch staff records for the specified dept
+     
       staffInDept = await Staff.find({ dept });
     }
 
