@@ -8,7 +8,7 @@ const app = express();
 const PORTEXPRESS = 8081;
 const PORT = 8080;
 
-// Serve the static HTML file for video call
+// Serve  static HTML file for video call
 app.get('/', (req, res) => {
   // const roomId = req.params.roomId; // The URL parameter to identify the room
 
