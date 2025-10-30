@@ -6,7 +6,7 @@ const AdminView = () => {
 
   useEffect(() => {
     socket.onopen = () => {
-      // Notify server that admin is connected
+      // Notify server that admin  connected
       socket.send(JSON.stringify({ type: 'admin' }));
     };
 
